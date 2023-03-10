@@ -4,6 +4,6 @@ html, body {
  }
 
 img {
-  width: 85%;
-  height: auto;
+  width: auto;
+  height: "1080";
 }
