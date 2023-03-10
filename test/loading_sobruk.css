@@ -1,6 +1,7 @@
-header{
-  background-image: url(https://i.postimg.cc/W1FVnmSk/sobruk.png);
-  text-align: center;
-  padding: 5px;
-  height: 450px; 
+html {
+    background: url(https://i.postimg.cc/W1FVnmSk/sobruk.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
