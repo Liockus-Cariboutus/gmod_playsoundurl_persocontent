@@ -1,23 +1,6 @@
-html, body {height: 100%}
-
-body {
-    position: relative;
-    padding: 0;
-    margin:0;
-    font-family: sans-serif;
-}
-.image {
-    position: relative;
-    left: 0px;      
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: cover;
-    background-attachment: scroll;
-    text-align: center;
-}
 img {
-  width: 70%;
-  height: 70%;
-  margin: auto;
-  position: absolute;
-  t
+    max-width:64px;
+    max-height:64px;
+    width:auto;
+    height:auto;
+}
