@@ -1,20 +1,852 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-		<link rel="stylesheet" href="loading_sobruk.css" />
-		<title>SOBRUK MINE</title>
-    </head>
-    <body>
-        <audio src="halloween.mp3" type="audio/mp3" autoplay loop>
-        <div style="background-size: cover; margin: 0px; padding: 0px; position: absolute; left: 0px; width: 100%; height: 100%; top: 0px; background-image: url(&quot;https://i.postimg.cc/W1FVnmSk/sobruk.png&quot;); opacity: 0;" id="bg">
-        <div style="background-size: cover; margin: 0px; padding: 0px; position: absolute; left: 0px; width: 100%; height: 100%; top: 0px; background-image: url(&quot;https://i.postimg.cc/W1FVnmSk/sobruk.png&quot;); background-repeat: no-repeat;" id="bg2">
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+
+    <title>Demo: My Title / LSM</title>
+    <meta name="description" content="Gmod Loading Screen Maker / Running a demo of My Title - Powered by gmod-lsm.com">
+
+    <meta name="theme-color" content="#" />
+
+    <link href="https://www.gmod-lsm.com/assets/css/normalize.css" rel="stylesheet">
+
+    <link href="https://www.gmod-lsm.com/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://www.gmod-lsm.com/assets/css/loadingscreen-base.css" rel="stylesheet">
+    
+     <link href="https://www.gmod-lsm.com/assets/css/load.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://www.gmod-lsm.com/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+    <style>
+
+  .text-left-layout-progress{
+    padding-top: 0.6rem !important;
+  }
+
+  .text-right-layout-progress{
+    padding-top: 0.6rem !important;
+  }
+
+  @media screen and (max-width: 1152px), screen and (max-height: 745px) {
+
+  	.text-left-layout-progress{
+    padding-top: 0.46rem !important;
+  }
+
+  .text-right-layout-progress{
+    padding-top: 0.45rem !important;
+  }
+
+  }
+
+  #bg, #bg img, #bg2{
+    transition: 2s filter linear;
+-webkit-transition: 2s -webkit-filter linear;
+-moz-transition: 2s -moz-filter linear;
+-ms-transition: 2s -ms-filter linear;
+-o-transition: 2s -o-filter linear;
+  }
+
+    html,body{
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body{
+      background: #000;
+    }
+
+
+  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+  	.loading-screen,.now-playing-text{
+  		font-family: 'Roboto', sans-serif; font-weight: 800
+  	}
+  </style>
+
+  </head>
+
+  <body>
+
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+  </div>
+
+  
+  	  		<div class="now-playing" style="background-color: #ffffff">
+  		<div class="now-playing-icon"><i style="color: #343a40" class="fas fa-volume-up fa-2x"></i></div><div class="now-playing-text"><label for="music-text" class="ml-2 mb-0 pb-0 lead" style="color: #000000">Now Playing:</label>
+  		<h5 id="music-text" class="ml-2 mb-0 py-0" style="color: #343a40">- - -</h5></div>
+  		</div>
+  		
+    
+        
+    <div class="powered-by"><div style="background-color: #"></div><a id="upgrade-pro" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="Want to remove this?" data-content="Upgrade to Pro for just 1.99$ / month! <br><a href='https://gmod-lsm.com/dashboard/pro'>More info...</a>"><img src="https://www.gmod-lsm.com/images/powered.png"></a>
+    </div>
+
+	
+  
+    
+
+<link href="https://gmod-lsm.com/assets/css/designs/default.css?v=1.4" rel="stylesheet">
+<div class="loading-screen loading-screen-demo">
+      <div class="title-info">
+        <h4 class="my-0 py-0" style="color: #ffffff">Welcome to</h4>
+        <h1 class="my-0 py-0" style="color: #ffffff">My Title</h1>
+      </div>
+            <div class="rules-info" style="background-color: #ffffff">
+        <div class="rules-info-header" style="background-color: #ffffff"><h5 class="my-0 py-0" style="color: #343a40">Rules</h5></div>
+        <div class="rules-item" style="background-color: #ffffff">
+          <div class="rules-item-number">
+            <h4 class="py-0 my-0" style="color: #343a40">1.</h4>
+          </div>
+          <div class="rules-item-text">
+            <p class="lead" style="color: #000000">No Prop-killing</p>
+          </div>
+        </div>        <div class="rules-item rules-dark" style="background-color: #f2f2f2">
+          <div class="rules-item-number">
+            <h4 class="py-0 my-0" style="color: #343a40">2.</h4>
+          </div>
+          <div class="rules-item-text">
+            <p class="lead" style="color: #000000">No Spamming</p>
+          </div>
+        </div>        <div class="rules-item" style="background-color: #ffffff">
+          <div class="rules-item-number">
+            <h4 class="py-0 my-0" style="color: #343a40">3.</h4>
+          </div>
+          <div class="rules-item-text">
+            <p class="lead" style="color: #000000">No Cheats/Exploits</p>
+          </div>
+        </div>        <div class="rules-item rules-dark" style="background-color: #f2f2f2">
+          <div class="rules-item-number">
+            <h4 class="py-0 my-0" style="color: #343a40">4.</h4>
+          </div>
+          <div class="rules-item-text">
+            <p class="lead" style="color: #000000">No Prop-abusing</p>
+          </div>
+        </div>        <div class="rules-item" style="background-color: #ffffff">
+          <div class="rules-item-number">
+            <h4 class="py-0 my-0" style="color: #343a40">5.</h4>
+          </div>
+          <div class="rules-item-text">
+            <p class="lead" style="color: #000000">Do not crash the server</p>
+          </div>
+        </div>        <div class="rules-item rules-dark" style="background-color: #f2f2f2">
+          <div class="rules-item-number">
+            <h4 class="py-0 my-0" style="color: #343a40">6.</h4>
+          </div>
+          <div class="rules-item-text">
+            <p class="lead" style="color: #000000">Enjoy your stay!</p>
+          </div>
+        </div>        </div>        <div class="user-info" style="background-color: #ffffff">
+          <div class="user-info-img" style="border-color: #">
+            <img src="https://avatars.akamai.steamstatic.com/b301117db48b92b032bb29b273f05533fa7ae7c8_full.jpg">
         </div>
-    </body>
+          <div class="user-info-text">
+            <h4 class="mb-0" style="color: #343a40">Joining Test User</h4>
+            <p class="lead text-black my-0 pb-0" style="color: #868e96 !important">STEAM_0:1:444765763</p>
+          </div>
+        </div><div class="description-info" style="background-color: #ffffff">
+          <p class="lead mb-0 pb-0" style="color: #000000"></p>
+        </div>
+                <div class="staff-info" style="background-color: #ffffff">
+          <div class="staff-info-header" style="background-color: #ffffff"><h5 class="my-0 py-0" style="color: #343a40">Staff</h5></div>
+          <div class="staff-item" style="background-color: #ffffff">
+          <div class="staff-item-img" style="border-color: #">
+            <img src="https://avatars.akamai.steamstatic.com/80b7d57c2708132abcf8617c7113b299f8a99ae9_full.jpg">
+          </div>
+          <div class="staff-item-text">
+            <h4 class="my-0 py-0" style="color: #343a40">LeLiock</h4>
+            <p class="lead" style="color: #868e96">Owner</p>
+          </div>
+        </div>          </div>          <div class="progress-bar-n text-left" style="background-color: #ffffff">
+        <h2 class="text-left-layout-progress" style="margin: 0; line-height: 1 !important; color: #343a40"><div style='display: inline-block;font-weight:600;padding-top: 2px;'><span id="percent">0</span>%</div><span class="progresstext text-right-layout-progress" id="progresstext">Retrieving server info...</span></h2>
+          <div class="progress-bar-n-inner" id="progress-bar" style="background-color: #"><div style="display: inline-block;"><h2 class="text-left-layout-progress" style="margin: 0; line-height: 1 !important; color: #ffffff"><div style="overflow: visible;display: inline-block;white-space: nowrap;font-weight:600; padding-top: 2px;"><span id="percent-loaded">0</span>%</div><span class="progresstext text-right-layout-progress" id="progresstext-loaded">Retrieving server info...</span></h2></div></div>
+        </div>
+              </div>
+      <div style="background-size:100%; background-size: cover; margin: 0; padding: 0; position: absolute; left: 0; width: 100%; height: 100%; top: 0;" id="bg">
+      </div> 
+
+      <div style="background-size:100%; background-size: cover; margin: 0; padding: 0; position: absolute; left: 0; width: 100%; height: 100%; top: 0;" id="bg2">
+      </div>
+
+    <script src="https://www.gmod-lsm.com/assets/vendor/jquery/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $( "#loader-wrapper" ).fadeOut( "slow" );
+      });
+    $(function () {
+  $("[data-toggle=popover]").popover({html:true})
+  $("#upgrade-pro").popover('show')
+
+})
+  </script>
+
+    <script type="text/javascript">
+
+   document.getElementById("percent").innerHTML = "5";
+   document.getElementById("percent-loaded").innerHTML = "5";
+
+   $('#progress-bar').css({ "width" : "5%"});
+
+   document.getElementById("progresstext").innerHTML = "Retrieving server info...";
+   document.getElementById("progresstext-loaded").innerHTML = "Retrieving server info...";
+</script>
+
+      <script type="text/javascript">
+
+        var bguse = ["https:\/\/i.postimg.cc\/W1FVnmSk\/sobruk.png"                ];
+      </script>
+
+             <script type="text/javascript">
+      $(function() {
+      var volume = 0;
+        $("audio").each(function(){ this.volume = volume/100; });
+      });
+    </script>
+    <audio controls autoplay loop hidden>
+      <source src="https://uploads.gmod-lsm.com/music_old/ogg/-.ogg" type="audio/ogg">
+    </audio>
+          <script>
+    	//Change Progress
+	$(document).ready(function(){
+	
+	for (let progress = 0; progress < 11; progress++) {
+		setTimeout( function timer(){
+	
+	if(progress == 1){
 
 
-	<audio src="halloween.mp3" type="audio/mp3" autoplay loop></audio>
-	<img src="https://i.postimg.cc/W1FVnmSk/sobruk.png">
-	    
-    </body>
+
+	$("#progress-bar").animate({width: '10%'});
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 10;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 2){
+		
+	$("#progresstext").text("Mounting Addons");
+	$("#progress-bar").animate({width: '20%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 20;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 3){
+	
+	$("#progress-bar").animate({width: '30%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 30;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 4){
+	
+	$("#progress-bar").animate({width: '40%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 40;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 5){
+	
+	$("#progress-bar").animate({width: '50%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 50;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	/*
+	if(progress == 6){
+	
+	$("#progresstext").text('Workshop complete');
+	$("#progress-bar").animate({width: '60%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 60;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	} */
+	
+	if(progress == 6){
+		
+	$("#progresstext").text("Workshop Complete");
+	$("#progress-bar").animate({width: '70%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 70;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 8){
+	
+	$("#progress-bar").animate({width: '80%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 80;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 9){
+		
+	$("#progresstext").text("Sending client info...");
+	$("#progress-bar").animate({width: '90%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 90;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 10){
+	
+	$("#progress-bar").animate({width: '100%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 100;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+
+
+	if(progress == 1){
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 10;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 2){
+		
+	$("#progresstext-loaded").text("Mounting Addons");
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 20;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 3){
+	
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 30;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 4){
+	
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 40;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 5){
+	
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 50;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	/*
+	if(progress == 6){
+	
+	$("#progresstext").text('Workshop complete');
+	$("#progress-bar").animate({width: '60%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 60;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	} */
+	
+	if(progress == 6){
+		
+	$("#progresstext-loaded").text("Workshop Complete");
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 70;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 8){
+	
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 80;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 9){
+		
+	$("#progresstext-loaded").text("Sending client info...");
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 90;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 10){
+	
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 100;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+
+	}, progress*2000 );
+	} 
+
+});
+
+
+    </script>
+
+    <script>
+		//showDemo();
+    $("#showDemo").fadeOut(0);
+		function showDemo(){
+			$("#showDemo").fadeIn(2000);
+			setTimeout(function(){
+				$("#showDemo").fadeOut(2000);
+				setTimeout(showDemo, 4000);
+			}, 4000);
+		}
+	</script>
+
+      <script src="https://www.gmod-lsm.com/assets/js/background-cycle.js?v=1.1"></script>
+
+    <script src="https://www.gmod-lsm.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
 </html>
