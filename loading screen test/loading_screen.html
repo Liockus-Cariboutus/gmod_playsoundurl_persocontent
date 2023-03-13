@@ -1,78 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Chargement</title>
-	<style>
+	<title>Chargement ...</title>
+	<style type="text/css">
 		body {
-			background: url('loading.png') no-repeat center center fixed;
-			background-size: cover;
 			margin: 0;
 			padding: 0;
-			overflow: hidden;
+			background-image: url(loading.png);
+			background-size: cover;
+			background-position: center;
+			font-family: Trebuchet MS, sans-serif;
+			font-size: 30px;
 			color: white;
-			font-family: sans-serif;
-			font-size: 20px;
 		}
 		
 		#loading-bar {
 			position: absolute;
-			bottom: 20px;
-			left: 50%;
-			transform: translateX(-50%);
+			bottom: 5%;
+			left: 10%;
 			width: 80%;
-			height: 30px;
-			background-color: #222222;
-			border: 2px solid #444444;
-			border-radius: 0;
-			margin-left: -42%;
-			margin-right: -42%;
+			height: 20px;
+			background-color: #333333;
+			border: 2px solid #1c1c1c;
+			border-radius: 5px;
+			overflow: hidden;
 		}
 		
 		#loading-progress {
-			position: absolute;
-			bottom: 22px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 0;
-			height: 26px;
+			height: 100%;
 			background-color: white;
-			border-radius: 0;
+			animation-name: loading;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
 		}
 		
-		#loading-text {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			text-align: center;
-			margin-bottom: 40px;
+		@keyframes loading {
+			0% { width: 0%; }
+			100% { width: 100%; }
 		}
 	</style>
-	<script>
-		window.addEventListener('load', function() {
-			var progressBar = document.getElementById('loading-progress');
-			var textElement = document.getElementById('loading-text');
-			var progress = 0;
-			var progressInterval = setInterval(function() {
-				progress += Math.random() * 10;
-				if (progress > 100) {
-					progress = 100;
-				}
-				progressBar.style.width = progress + '%';
-				textElement.innerHTML = 'Chargement... ' + Math.round(progress) + '%';
-				if (progress >= 100) {
-					clearInterval(progressInterval);
-				}
-			}, 1000);
-		});
-	</script>
 </head>
 <body>
 	<div id="loading-bar">
 		<div id="loading-progress"></div>
 	</div>
-	<div id="loading-text">Chargement...</div>
-	<audio src="music.mp3" autoplay loop></audio>
+	<script>
+		window.onload = function() {
+			var loadingProgress = document.getElementById("loading-progress");
+			var loadingBar = document.getElementById("loading-bar");
+			var loadingText = document.getElementsByTagName("body")[0];
+			
+			function updateLoadingScreen(percent) {
+				loadingProgress.style.width = percent + "%";
+				
+				if (percent == 100) {
+					loadingText.innerHTML = "Arrivée sur le front.";
+				} else {
+					loadingText.innerHTML = "Déploiement ...";
+				}
+			}
+			
+			var progress = 0;
+			var interval = setInterval(function() {
+				progress += Math.floor(Math.random() * 10) + 1;
+				
+				if (progress > 100) {
+					progress = 100;
+					clearInterval(interval);
+				}
+				
+				updateLoadingScreen(progress);
+			}, 500);
+		};
+	</script>
 </body>
 </html>
