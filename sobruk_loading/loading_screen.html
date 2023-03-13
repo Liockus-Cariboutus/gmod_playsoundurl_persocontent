@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Écran de chargement</title>
+	<style>
+		@font-face {
+			font-family: 'Typewriter';
+			src: url('path/to/typewriter.ttf');
+		}
+		body {
+			background-image: url("loading.png");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+		#loading-bar {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			height: 5px;
+			width: 100%;
+			background-color: black;
+			border-radius: 0;
+		}
+		#progress-bar {
+			height: 5px;
+			background-color: white;
+			border-radius: 0;
+		}
+		#loading-text {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			color: white;
+			font-family: 'Typewriter', monospace;
+			font-size: 30px;
+			text-shadow: 1px 1px 1px black;
+		}
+	</style>
+</head>
+<body>
+	<audio src="Mission.mp3" autoplay loop></audio>
+	<div id="loading-bar">
+		<div id="progress-bar"></div>
+	</div>
+	<div id="loading-text">Chargement ...</div>
+
+	<script>
+		var progressBar = document.getElementById("progress-bar");
+		var loadingText = document.getElementById("loading-text");
+		var progress = 0;
+		var interval = setInterval(function() {
+			progress += Math.random() * 5;
+			if (progress > 100) {
+				progress = 100;
+				loadingText.innerHTML = "Arrivée sur le front.";
+				clearInterval(interval);
+			}
+			progressBar.style.width = progress + "%";
+		}, 500);
+	</script>
+</body>
+</html>
