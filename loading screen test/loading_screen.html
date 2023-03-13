@@ -24,7 +24,9 @@
 			height: 30px;
 			background-color: #222222;
 			border: 2px solid #444444;
-			border-radius: 5px;
+			border-radius: 0;
+			margin-left: -42%;
+			margin-right: -42%;
 		}
 		
 		#loading-progress {
@@ -35,7 +37,7 @@
 			width: 0;
 			height: 26px;
 			background-color: white;
-			border-radius: 5px;
+			border-radius: 0;
 		}
 		
 		#loading-text {
@@ -44,6 +46,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			text-align: center;
+			margin-bottom: 40px;
 		}
 	</style>
 	<script>
@@ -70,6 +73,6 @@
 		<div id="loading-progress"></div>
 	</div>
 	<div id="loading-text">Chargement...</div>
-	<audio src="soundtrack.mp3" autoplay loop></audio>
+	<audio src="music.mp3" autoplay loop></audio>
 </body>
 </html>
