@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Écran de chargement</title>
+	<title>Diaporama</title>
 	<style>
 		@font-face {
 			font-family: 'Typewriter';
@@ -48,6 +48,8 @@
 	<div id="loading-text">Chargement ...</div>
 
 	<script>
+		var images = ["background.png", "image1.png"];
+		var currentImageIndex = 0;
 		var progressBar = document.getElementById("progress-bar");
 		var loadingText = document.getElementById("loading-text");
 		var progress = 0;
@@ -57,9 +59,18 @@
 				progress = 100;
 				loadingText.innerHTML = "Arrivée sur le front.";
 				clearInterval(interval);
+				setInterval(changeImage, 60000); // Change image every 60 seconds
 			}
 			progressBar.style.width = progress + "%";
 		}, 500);
+
+		function changeImage() {
+			currentImageIndex++;
+			if (currentImageIndex >= images.length) {
+				currentImageIndex = 0;
+			}
+			document.body.style.backgroundImage = "url('" + images[currentImageIndex] + "')";
+		}
 	</script>
 </body>
 </html>
